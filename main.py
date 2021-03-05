@@ -67,6 +67,8 @@ while game_on:
             return "X"
         elif pos_1 == "X" and pos_4 == "X" and pos_7 == "X":
             return "X"
+        elif pos_2 == "X" and pos_5 == "X" and pos_8 == "X":
+            return "X"
         elif pos_3 == "X" and pos_6 == "X" and pos_9 == "X":
             return "X"
 
@@ -82,6 +84,8 @@ while game_on:
             return "O"
         elif pos_1 == "O" and pos_4 == "O" and pos_7 == "O":
             return "O"
+        elif pos_2 == "O" and pos_5 == "O" and pos_8 == "O":
+            return "O"
         elif pos_3 == "O" and pos_6 == "O" and pos_9 == "O":
             return "O"
 
@@ -96,8 +100,14 @@ while game_on:
 
             if player_choice == "X":
                 comp = "O"
+                print()
+                print("Computer will be O")  # informing the user they will be playing against an AI computer
+                print()
             elif player_choice == "O":
                 comp = "X"
+                print()
+                print("Computer will be X")
+                print()
 
             while len(occupied_pos) < 9:
 
@@ -123,10 +133,12 @@ while game_on:
                     if check_winner() == "X" and player_choice == "X":
                         print_game_board()
                         print("Game Over! You won!")
+                        print()
                         break
                     elif check_winner() == "O" and player_choice == "O":
                         print_game_board()
                         print("Game Over! You won!")
+                        print()
                         break
 
                     # end the game once all positions have been occupied without a winner
@@ -149,14 +161,18 @@ while game_on:
                         if check_winner() == "X" and comp == "X":
                             print_game_board()
                             print("Game Over! You lost! Computer won!")
+                            print()
                             break
                         elif check_winner() == "O" and comp == "O":
                             print_game_board()
                             print("Game Over! You lost! Computer won!")
+                            print()
                             break
 
                         print_game_board()
         else:
+            print()
             print("Wrong letter! Choose 'X' or 'O'")
+            print()
     else:
         game_on = False
